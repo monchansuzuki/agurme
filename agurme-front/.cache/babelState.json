@@ -30,9 +30,9 @@
           "name": "/Users/tamonsuzuki/Documents/agurme/agurme-front/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
-            "allExtensions": false,
-            "isTSX": false,
-            "jsxPragma": "React"
+            "isTSX": true,
+            "jsxPragma": "jsx",
+            "allExtensions": true
           }
         }
       ],
@@ -71,9 +71,9 @@
           "name": "/Users/tamonsuzuki/Documents/agurme/agurme-front/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
-            "allExtensions": false,
-            "isTSX": false,
-            "jsxPragma": "React"
+            "isTSX": true,
+            "jsxPragma": "jsx",
+            "allExtensions": true
           }
         }
       ],
@@ -112,9 +112,9 @@
           "name": "/Users/tamonsuzuki/Documents/agurme/agurme-front/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
-            "allExtensions": false,
-            "isTSX": false,
-            "jsxPragma": "React"
+            "isTSX": true,
+            "jsxPragma": "jsx",
+            "allExtensions": true
           }
         }
       ],
@@ -153,9 +153,9 @@
           "name": "/Users/tamonsuzuki/Documents/agurme/agurme-front/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
-            "allExtensions": false,
-            "isTSX": false,
-            "jsxPragma": "React"
+            "isTSX": true,
+            "jsxPragma": "jsx",
+            "allExtensions": true
           }
         }
       ],
