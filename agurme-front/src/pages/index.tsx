@@ -2,6 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import {graphql, Link} from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
+import { Helmet } from "react-helmet"
 
 
 const IndexPage = ({data}) => {
@@ -30,6 +31,13 @@ const IndexPage = ({data}) => {
   );
   return (
     <Layout>
+      <Helmet  htmlAttributes={{
+        lang: 'jp',
+      }}>
+        <meta charSet="utf-8" />
+        <title>茅ヶ崎アグルメ</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <section
         className="bg-img-container"
       >
