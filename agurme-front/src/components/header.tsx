@@ -44,17 +44,17 @@ const Header = () => {
           <div className="tel-container">
             <div className="tel">
               <h2>チガサキッチン アグルメ駅前店</h2>
-              <a href="" className="info">Tel: 0467-58-2202</a>
+              <a href="tel:0467-58-2202" className="info">Tel: 0467-58-2202</a>
             </div>
 
             <div className="tel">
               <h2>茅ヶ崎 ピザ パスタ テイクアウト</h2>
-              <a className="info">Tel: 0467-73-7712</a>
+              <a href="tel:0467-73-7712" className="info">Tel: 0467-73-7712</a>
             </div>
 
             <div className="place-item-center">
-              <a className="button" href="">
-                オンライン予約
+              <a className="button" href="https://www.hotpepper.jp/strJ001213017/yoyaku/hpds/?ROUTE_KBN=20">
+                ネット予約
               </a>
             </div>
           </div>
