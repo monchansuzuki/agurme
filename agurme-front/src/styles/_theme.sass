@@ -1,0 +1,115 @@
+@import "global"
+
+.title-right
+  width: max-content
+  position: relative
+  padding-bottom: 1rem !important
+  &:before
+    content: ""
+    position: absolute
+    width: 40vw
+    height: 4px
+    background-color: orange
+    bottom: 0
+    right: 0
+
+.title-left
+  width: max-content
+  position: relative
+  padding-bottom: 1rem !important
+  &:before
+    content: ""
+    position: absolute
+    width: 40vw
+    height: 4px
+    background-color: orange
+    bottom: 0
+    left: 0
+
+.title-center
+  position: relative
+  text-align: center
+  padding-bottom: 1rem !important
+  &:before
+    content: ""
+    position: absolute
+    width: 40vw
+    height: 4px
+    background-color: orange
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+
+
+.main-container
+  position: relative
+  width: 100vw
+  height: 100vh
+  display: grid
+  grid-template-rows: auto 1fr auto
+  main
+    .body
+      padding: 1.3em
+
+
+// Button
+.button
+  width: max-content
+  padding: .4em 1.5em
+  border: solid 1px black
+  &-white
+    @extend .button
+    background-color: white
+    &:active, &:hover, &:focus
+      background-color: black
+      color: white
+  &-black
+    @extend .button
+    background-color: black
+    color: white
+    &:active, &:hover, &:focus
+      background-color: white
+      color: black
+
+
+// dirty
+
+
+
+.image-container
+  position: relative
+  box-shadow: 3px 5px 8px 0px rgb(0 0 0 / 32%)
+  &:before
+    content: ""
+    border: solid 2px #ffffff
+    width: 90%
+    height: 90%
+    position: absolute
+    top: 4px
+    left: 8px
+    z-index: 2
+    box-shadow: 4px 6px 0 0 grey
+  .title
+    color: white
+    position: absolute
+    font-stretch: expanded
+    font-size: 1.5em
+    top: 30%
+    left: 16px
+    text-transform: capitalize
+    font-family: $font-family-elegant
+    z-index: 200
+    @media #{$mq-small}
+      font-size: 1em
+    &:before
+      content: ""
+      position: absolute
+      height: 100%
+      top: -4px
+      left: 0
+      width: 140%
+      background-color: black
+      z-index: -1
+
+
+
