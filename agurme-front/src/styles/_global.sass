@@ -1,0 +1,105 @@
+@import "typography"
+
+/*----------------
+///*Global styles
+/*----------------
+
+// colors
+$primary-color: #bd8769
+$secondary-color: #FFEEBB
+$third-color:#FFDCB8
+$accent-color:#FFC1B6
+
+$background-color: #F4F2C6
+$background-color-dark: #696855
+$background-color-white: #ffffff
+
+// font
+$base-font-size: 1rem
+$font-family: "Noto Sans" , sans-serif
+$ft-small: .8rem
+$ft-medium: 1rem
+$ft-large: 1.5rem
+$ft-x-large: 1.5rem
+
+
+// line-height
+$base-line-height: 1.5
+$header-line-height: 1.25
+
+// breakpoint
+$bp-x-small: 26.5625em //425px
+$bp-small: 48em
+$bp-medium: 64em
+$bp-large: 85.375em
+$bp-x-large: 120em
+$bp-xx-large: 160em
+
+// media queries
+$mq-x-small: "(min-width: #{$bp-x-small})"
+$mq-small: "(min-width: #{$bp-small})"
+$mq-medium: "(min-width: #{$bp-medium})"
+$mq-large: "(min-width: #{$bp-large})"
+$mq-x-large: "(min-width: #{$bp-x-large})"
+$mq-xx-large: "(min-width: #{$bp-xx-large})"
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+
+::-webkit-scrollbar
+  display: none
+
+@mixin responsive-font($font-size : $base-font-size, $line-height: $base-line-height)
+  font-size: $font-size
+  line-height: $line-height
+
+  @media #{$mq-medium}
+    font-size: $font-size*1.2
+    line-height: $line-height*1.2
+
+  @media #{$mq-large}
+    font-size: $font-size*1.3
+
+  @media #{$mq-x-large}
+    font-size: $font-size*1.4
+
+  @media #{$mq-xx-large}
+    font-size: $font-size*1.6
+
+body
+  overscroll-behavior: contain
+  @include responsive-font
+
+
+
+img, ul
+  margin: 0 0 !important
+
+li
+  list-style: none
+  margin: 0 !important
+p
+  color: black !important
+  @include responsive-font
+
+h2
+  font-family: $font-family-elegant
+
+blockquote, figcaption
+  margin: 1em 1em 0 1em !important
+  font-family: adobe-garamond-pro, serif
+  font-size: 0.8em !important
+  @include responsive-font($line-height: 1.3em)
+
+blockquote
+  font-style: italic
+
+figcaption
+  font-weight: bold
+  font-family: futura, sans-serif
+
+
+
+// colors
+.bg-dark
+  background-color: #171717
+  color: white
+

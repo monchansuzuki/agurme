@@ -1,0 +1,56 @@
+@import "global"
+.index-main-color
+  background-color: rgb(42 49 55 / .7)
+
+.bg-img-container
+  position: absolute
+  overflow-x: hidden
+  top: 0
+  left: 0
+  height: 100vh
+  width: 100vw
+  @media #{$mq-small}
+    background-color: $third-color
+  .bg-img-header
+    width: 100%
+    height: 100%
+    filter: brightness(0.7)
+    @media #{$mq-small}
+      width: auto
+  .welcome-message
+    position: absolute
+    top: 40%
+    right: 10%
+    display: flex
+    flex-direction: column
+    font-family: Futura, serif
+    font-weight: bold
+    font-size: 1.3rem
+    text-align: left
+    color: #fff !important
+    line-height: 1.4
+    border: white solid 2px
+    padding: 1em
+    background-color: rgb(1, 1, 1, .3)
+    @media #{$mq-small}
+      font-size: 2em
+      left: 20%
+      right: initial
+
+    .highlight
+      &:after
+        content: ""
+        position: absolute
+        height: 5px
+        width: 9ch
+        background-color: yellow
+        bottom: 0.6em
+        left: 1em
+
+
+.bg-img-menu
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  z-index: -10
