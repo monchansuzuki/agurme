@@ -38,6 +38,8 @@ const IndexPage = ({data}) => {
         <title>茅ヶ崎アグルメ</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
+
+      {/*WELCOME*/}
       <section
         className="bg-img-container"
       >
@@ -54,8 +56,9 @@ const IndexPage = ({data}) => {
         </p>
       </section>
 
+      {/*RESTAURANT*/}
       <section
-        style={{marginTop: '94vh'}}
+        style={{marginTop: '104vh'}}
         className="flex-column section-1"
       >
 
@@ -105,6 +108,7 @@ const IndexPage = ({data}) => {
         </div>
       </section>
 
+      {/*MENU*/}
       <section
         className="flex-column container bg-dark section-1"
       >
@@ -144,7 +148,7 @@ const IndexPage = ({data}) => {
           </figure>
         </div>
 
-        <ul className="flex grid-right">
+        <ul className="container-flex grid-right">
           {menuCard}
 
         </ul>
@@ -156,6 +160,7 @@ const IndexPage = ({data}) => {
         </Link>
       </section>
 
+      {/*BBQ*/}
       <section
         className="flex-column container section-1"
       >

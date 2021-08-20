@@ -17,6 +17,7 @@
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-plugin-social9-socialshare": "^1.0.5",
     "gatsby-source-filesystem": "^3.10.0",
+    "gatsby-transformer-remark": "^4.9.0",
     "gatsby-transformer-sharp": "^3.10.0",
     "gbimage-bridge": "^0.1.4",
     "intersection-observer": "^0.12.0",

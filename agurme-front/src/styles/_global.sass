@@ -1,26 +1,61 @@
-@import "typography"
+// font size
+$s-font-size: 0.8125rem
+$m-font-size: 1rem
+$font-size-4: 1.25rem
+$font-size-3: 1.5625rem
+$font-size-2: 1.9375rem
+$font-size-1: 2.5rem
+$font-family-noto-sans: "Noto Sans" , sans-serif
+$font-family-noto-sans: "Noto Sans" , sans-serif
+$font-family-elegant: "Playfair Display", serif
+
+//---------//
+// Space
+//--------//
+$space-inset-default: 16px 16px 16px 16px
+$space-inset-xs:  4px 4px 4px 4px
+$space-inset-s:  8px 8px 8px 8px
+$space-inset-m:  16px 16px 16px 16px
+$space-inset-l:  32px 32px 32px 32px
+$space-inset-xl:  64px 64px 64px 64px
+
+$space-inset-squish-s:  4px 8px
+$space-inset-squish-m:  8px 16px
+$space-inset-squish-l:  16px 32px
+
+$space-inset-stretch-s:  12px 8px
+$space-inset-stretch-m:  24px 16px
+
+$space-inset-default: 16px 16px 16px 16px
+$space-inset-xs:  4px 4px 4px 4px
+$space-inset-s:  8px 8px 8px 8px
+$space-inset-m:  16px 16px 16px 16px
+$space-inset-l:  32px 32px 32px 32px
+$space-inset-xl:  64px 64px 64px 64px
+
+$space-stack-default:  0 0 16px 0
+$space-stack-xs:  0 0 4px 0
+$space-stack-s:  0 0 8px 0
+$space-stack-m:  0 0 16px 0
+$space-stack-l:  0 0 32px 0
+$space-stack-xl:  0 0 64px 0
+$space-default : 16px
+$space-xs:  4px
+$space-s:  8px
+$space-m:  16px
+$space-l:  32px
+$space-xl:  64px
+
 
 /*----------------
 ///*Global styles
 /*----------------
 
 // colors
-$primary-color: #bd8769
-$secondary-color: #FFEEBB
-$third-color:#FFDCB8
-$accent-color:#FFC1B6
+$primary-color: #BDA81E
+$complementary: #F1AE4A
+$accent-color: #FFC4AA
 
-$background-color: #F4F2C6
-$background-color-dark: #696855
-$background-color-white: #ffffff
-
-// font
-$base-font-size: 1rem
-$font-family: "Noto Sans" , sans-serif
-$ft-small: .8rem
-$ft-medium: 1rem
-$ft-large: 1.5rem
-$ft-x-large: 1.5rem
 
 
 // line-height
@@ -47,7 +82,7 @@ $mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
 ::-webkit-scrollbar
   display: none
 
-@mixin responsive-font($font-size : $base-font-size, $line-height: $base-line-height)
+@mixin responsive-font($font-size : $m-font-size, $line-height: $base-line-height)
   font-size: $font-size
   line-height: $line-height
 

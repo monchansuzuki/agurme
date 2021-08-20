@@ -5,10 +5,10 @@
 //--------//
 
 .container
-  padding: 1.6em 4%
+  margin: $space-stack-s
   position: relative
   @media #{$mq-small}
-    padding: 1.6em  8%
+    padding: $space-stack-s
 
   @media #{$mq-medium}
     padding: 1.6em  12%
@@ -19,8 +19,6 @@
   @media #{$mq-x-large}
     padding: 1.6em  20%
 
-  h2
-    padding-top: 4em
 
 //---------//
 // original layout
@@ -36,6 +34,45 @@
 .section-1
   grid-template-areas: "header header" "left right" "footer footer"
 
+// section body
+
+.section-body
+  grid-template-rows: 1fr 4fr 16px
+
+.section-body-2
+  grid-template-rows: 1fr 1fr
+
+.section-body, .section-body-2
+  position: relative
+  display: grid
+  grid-template-columns: repeat(4,1fr)
+
+  .section-img
+    grid-area: 1/2/4/5
+
+  .section-article, .section-article-right
+    background-color: rgb(224 187 117)
+    padding: $space-inset-default
+    z-index: 1
+
+  .section-article
+    grid-area: 2/1/3/4
+
+  .section-img-left
+    grid-area: 1/1/3/4
+
+  .section-article-right
+    grid-area: 1/2/2/5
+
+.img-container
+  margin: 64px 0
+  //animation: slow-zoom 4s ease-in-out
+
+@keyframes slow-zoom
+  from
+    transform: scale(1.2)
+  to
+    transform: scale(1)
 
 .grid-header
   grid-area: header
@@ -49,6 +86,21 @@
 .grid-footer
   grid-area: footer
 
+.line
+  width: 80%
+  margin: auto
+  height: 2px
+  background-color: rgba(0, 0, 0, 1)
+  margin-bottom: 54px
+
+  @media #{$mq-medium}
+    width: 50%
+
+  @media #{$mq-medium}
+    width: 40%
+
+  @media #{$mq-large}
+    width: 30%
 
 footer
   display: flex !important
@@ -57,20 +109,7 @@ footer
   align-items: center
   gap: 8px
   padding: 2em 0
-  .line
-    width: 80%
-    margin-bottom: 3em
-    height: 2px
-    background-color: rgba(0, 0, 0, 1)
 
-    @media #{$mq-medium}
-      width: 50%
-
-    @media #{$mq-medium}
-      width: 40%
-
-    @media #{$mq-large}
-      width: 30%
 
 
 //---------//
@@ -126,11 +165,12 @@ footer
   flex-direction: column
   gap: 2em
 
-.flex
+.container-flex
   display: flex
   flex-wrap: wrap
   justify-content: center
   gap: 1em
+  margin: $space-stack-l
 
   .flex-item
 
@@ -157,3 +197,11 @@ footer
 
 .justify-self-center
   justify-self: center
+
+
+
+// Helper
+
+.center-el
+  display: grid
+  place-items: center

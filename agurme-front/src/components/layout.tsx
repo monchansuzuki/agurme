@@ -20,9 +20,9 @@ const Layout = ({children}) => {
     <div className="main-container">
       <Header siteTitle={data.site.siteMetadata?.title || `Title`}/>
 
-      <main>{children}</main>
+      <main style={{marginTop: '56px'}}>{children}</main>
       <footer>
-        <div className="line"></div>
+        <div className="line"/>
         <div className="txt-center">
 
           <strong>DIALLO CORPORATION </strong><br/>
