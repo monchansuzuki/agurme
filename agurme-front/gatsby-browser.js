@@ -1,6 +1,5 @@
 import "./src/styles/styles.sass"
 
-
 export const onClientEntry = () => {
     // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
     if (!(`IntersectionObserver` in window)) {

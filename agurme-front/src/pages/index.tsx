@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import {graphql, Link} from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import { Helmet } from "react-helmet"
+import ImageGalleryComponent from "../components/ImagesGalleryComponent/ImageGalleryComponent";
 
 
 const IndexPage = ({data}) => {
@@ -18,15 +19,13 @@ const IndexPage = ({data}) => {
   // menu
 
   const menuData = menuImagesData.edges.sort((a, b) => a.node.name.replace(/[^0-9\.]+/g, "") - b.node.name.replace(/[^0-9\.]+/g, ""));
-  const menuCard = menuData.map((item, i) => {
+  const menuImages = menuData.map((item, i) => {
       const image = getImage(item.node.childImageSharp);
       const name = item.node.name.replace(/\d+/g, "");
-
-      return (
-        <div className='flex-item image-container' key={i}>
-          <GatsbyImage className="" image={image!} alt={item.node.name}/>
-          <div className="title">{name}</div>
-        </div>)
+      return {
+        data: image,
+        alt: name,
+      }
     }
   );
   return (
@@ -149,12 +148,11 @@ const IndexPage = ({data}) => {
         </div>
 
         <ul className="container-flex grid-right">
-          {menuCard}
-
+          <ImageGalleryComponent images={menuImages}/>
         </ul>
         <Link
           className="button-white align-self-center grid-footer justify-self-center"
-          to="/bbq"
+          to="/menu"
         >
           More
         </Link>

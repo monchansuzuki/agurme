@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 
 import {graphql, Link} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
+import ModalComponent from "../components/ModalComponent/ModalComponent";
 
 
 const IndexPage = ({data}) => {
@@ -15,6 +16,7 @@ const IndexPage = ({data}) => {
 
   return (
     <Layout>
+      <ModalComponent/>
       <div className="container-flex " style={{gap: '4px', flexWrap: 'nowrap'}}>
         <div>
           <GatsbyImage image={umimaeImage!} alt='bg'/>
