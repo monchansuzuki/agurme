@@ -1,9 +1,12 @@
 import * as React from "react"
+import {useState} from "react"
 import Layout from "../components/layout"
 
 import {graphql, Link} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import ModalComponent from "../components/ModalComponent/ModalComponent";
+import {ClickableImageComponent} from "../components/ClickableImageComponent/ClickableImageComponent";
+import {PageHeaderComponent} from "../components/PageHeaderComponent/PageHeaderComponent";
 
 
 const IndexPage = ({data}) => {
@@ -14,20 +17,22 @@ const IndexPage = ({data}) => {
   const barmanImg = getImage(barmanImgData);
   const dialoImg = getImage(dialoImgData);
 
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <Layout>
-      <ModalComponent/>
+
+      {openModal &&
+      <ModalComponent onClose={() => setOpenModal(false)}>
+          <div>Hello</div>
+      </ModalComponent>
+      }
+
+      <PageHeaderComponent title={`About Us`}/>
+
       <div className="container-flex " style={{gap: '4px', flexWrap: 'nowrap'}}>
-        <div>
-          <GatsbyImage image={umimaeImage!} alt='bg'/>
-
-          <p>海にむかっていく、湘南らしいお店</p>
-        </div>
-        <div>
-          <GatsbyImage image={ekimaeImg!} alt='bg'/>
-          <p>駅前のお店</p>
-
-        </div>
+        <ClickableImageComponent onClick={() => setOpenModal(true)} image={umimaeImage!} text={`海にむかっていく、湘南らしいお店`}/>
+        <ClickableImageComponent onClick={() => setOpenModal(false)} image={ekimaeImg!} text={`駅前のお店`}/>
       </div>
 
       <section className="section-1">
@@ -46,9 +51,7 @@ const IndexPage = ({data}) => {
         </div>
 
 
-        <div>
-          <GatsbyImage className="img-container" image={pizzaGuyImg!} alt='bg'/>
-        </div>
+        <GatsbyImage className="img-container" image={pizzaGuyImg!} alt='bg'/>
 
 
         <div className="section-body-2">

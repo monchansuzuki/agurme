@@ -8,7 +8,6 @@ import ImageGalleryComponent from "../components/ImagesGalleryComponent/ImageGal
 
 const IndexPage = ({data}) => {
 
-  console.log(data.menuImagesData);
   // images
   const {bgImageData, imageRestaurantData, menuImagesData, backgroundBBQData, chigsakiBBQData} = data;
   const bgImage = getImage(bgImageData);
@@ -16,6 +15,9 @@ const IndexPage = ({data}) => {
   const bbqImage = getImage(chigsakiBBQData);
   const bbqBg = getImage(backgroundBBQData);
 
+
+  // restaurant ImageGallery
+  
   // menu
 
   const menuData = menuImagesData.edges.sort((a, b) => a.node.name.replace(/[^0-9\.]+/g, "") - b.node.name.replace(/[^0-9\.]+/g, ""));
@@ -45,7 +47,7 @@ const IndexPage = ({data}) => {
         <GatsbyImage className="bg-img-header" image={bgImage!} alt='bg'/>
         <p
           className="welcome-message"
-          // data-sal="zoom-in"
+          data-sal="zoom-in"
           data-sal-duration="400"
           data-sal-delay="5"
           data-sal-easing="easeOutQuint"

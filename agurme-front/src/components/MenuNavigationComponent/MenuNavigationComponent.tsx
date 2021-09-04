@@ -3,6 +3,7 @@ import * as style from './MenuNavigationComponentstyle.module.sass'
 
 export type MenuNavigationComponentProps = {
   onNavigate: (value: number) => void;
+  className?: {}
 }
 
 export default function MenuNavigationComponent(props: MenuNavigationComponentProps) {
@@ -15,7 +16,7 @@ export default function MenuNavigationComponent(props: MenuNavigationComponentPr
   };
 
   return (
-    <ul className={style.container}>
+    <ul className={`${style.container} ${props.className}`}>
       <li className={`${style.link} ${activeLink !== 1 || style.activeLink}`} onClick={() => handleNavigation(1)}>Pizza</li>
       <li className={`${style.link} ${activeLink !== 2 || style.activeLink}`} onClick={() => handleNavigation(2)}>Pasta</li>
       <li className={`${style.link} ${activeLink !== 3 || style.activeLink}`} onClick={() => handleNavigation(3)}>Second Piatto</li>
