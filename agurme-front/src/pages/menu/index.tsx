@@ -210,6 +210,7 @@ const Index = ({data}) => {
         },
       ]
     },
+
     {
       id: 6,
       menuTitle: "DOLCE",
