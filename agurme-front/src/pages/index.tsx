@@ -3,11 +3,11 @@ import Layout from "../components/layout"
 import {graphql, Link} from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import { Helmet } from "react-helmet"
+import ImageGalleryComponent from "../components/ImagesGalleryComponent/ImageGalleryComponent";
 
 
 const IndexPage = ({data}) => {
 
-  console.log(data.menuImagesData);
   // images
   const {bgImageData, imageRestaurantData, menuImagesData, backgroundBBQData, chigsakiBBQData} = data;
   const bgImage = getImage(bgImageData);
@@ -15,18 +15,19 @@ const IndexPage = ({data}) => {
   const bbqImage = getImage(chigsakiBBQData);
   const bbqBg = getImage(backgroundBBQData);
 
+
+  // restaurant ImageGallery
+  
   // menu
 
   const menuData = menuImagesData.edges.sort((a, b) => a.node.name.replace(/[^0-9\.]+/g, "") - b.node.name.replace(/[^0-9\.]+/g, ""));
-  const menuCard = menuData.map((item, i) => {
+  const menuImages = menuData.map((item, i) => {
       const image = getImage(item.node.childImageSharp);
       const name = item.node.name.replace(/\d+/g, "");
-
-      return (
-        <div className='flex-item image-container' key={i}>
-          <GatsbyImage className="" image={image!} alt={item.node.name}/>
-          <div className="title">{name}</div>
-        </div>)
+      return {
+        data: image,
+        alt: name,
+      }
     }
   );
   return (
@@ -38,13 +39,15 @@ const IndexPage = ({data}) => {
         <title>茅ヶ崎アグルメ</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
+
+      {/*WELCOME*/}
       <section
         className="bg-img-container"
       >
         <GatsbyImage className="bg-img-header" image={bgImage!} alt='bg'/>
         <p
           className="welcome-message"
-          // data-sal="zoom-in"
+          data-sal="zoom-in"
           data-sal-duration="400"
           data-sal-delay="5"
           data-sal-easing="easeOutQuint"
@@ -54,8 +57,9 @@ const IndexPage = ({data}) => {
         </p>
       </section>
 
+      {/*RESTAURANT*/}
       <section
-        style={{marginTop: '94vh'}}
+        style={{marginTop: '104vh'}}
         className="flex-column section-1"
       >
 
@@ -105,6 +109,7 @@ const IndexPage = ({data}) => {
         </div>
       </section>
 
+      {/*MENU*/}
       <section
         className="flex-column container bg-dark section-1"
       >
@@ -144,18 +149,18 @@ const IndexPage = ({data}) => {
           </figure>
         </div>
 
-        <ul className="flex grid-right">
-          {menuCard}
-
+        <ul className="container-flex grid-right">
+          <ImageGalleryComponent images={menuImages}/>
         </ul>
         <Link
           className="button-white align-self-center grid-footer justify-self-center"
-          to="/bbq"
+          to="/menu"
         >
           More
         </Link>
       </section>
 
+      {/*BBQ*/}
       <section
         className="flex-column container section-1"
       >

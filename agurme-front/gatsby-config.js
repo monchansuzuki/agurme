@@ -2,7 +2,7 @@ module.exports = {
     siteMetadata: {
         title: `Agurme`,
         description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-        author: `@gatsbyjs`,
+        author: `@tamon`,
         siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     },
     plugins: [
@@ -41,12 +41,6 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-sass',
             options: {}
-        },
-        {
-            resolve: `gatsby-plugin-social9-socialshare`,
-            options: {
-                content: `xxxxxxxxxx`,
-            }
         },
         `gatsby-plugin-scroll-reveal`
         ,

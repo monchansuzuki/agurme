@@ -1,4 +1,5 @@
 @import "../typography"
+@import "../global"
 .top-nav
   height: 56px
   width: 100%
@@ -10,6 +11,7 @@
   top: 0
   right: 0
   justify-content: space-between
+  background-color: black
 
   .menu-container
     cursor: pointer
@@ -18,8 +20,8 @@
     background-color: black
     top: 0
     right: 0
-    width: 3rem
-    height: 3rem
+    width: 56px
+    height: 56px
     #menu
       height: .1em
       width: 28px
@@ -69,9 +71,9 @@
   background-color: $primary-color
   color: wheat
   z-index: 300
-  right: 3rem
+  right: 56px
   top: 0
-  height: 3rem
+  height: 56px
   vertical-align: center
   font-size: .7em
   padding: 0 .3em
@@ -97,8 +99,8 @@
   top: 0
   right: 0
   z-index: 100
-  transform: translateX(-100%)
-  background-color: black
+  transform: translateX(-150%)
+  background-color: #171717
   position: absolute
   transition: 0.3s ease-in-out
   &.active
@@ -142,14 +144,15 @@
     font-family: $font-family-elegant
     color: wheat
   h2
-    font-size: $ft-medium
+    font-size: $m-font-size
     margin: 0
   p
     margin-bottom: .3em
   .sub-p
     margin-bottom: 1em
   .footer
-    font-size: $ft-small
+    font-size: $s-font-size
+
 
 
 .tel-container
@@ -163,6 +166,6 @@
   font-family: $font-family-elegant
   color: wheat
   border-bottom: 1px solid wheat
-  font-size: $ft-large
+  font-size: $font-size-2
 
 

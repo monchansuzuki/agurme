@@ -1,0 +1,48 @@
+@import "../../styles/global"
+.container
+  display: grid
+  gap: $space-m
+  margin: $space-default
+
+.container-enter
+  opacity: 0
+
+.container-enter-active
+  opacity: 1
+  transition: opacity 300ms
+
+.container-exit
+  opacity: 1
+
+.container-exit-active
+  opacity: 0
+  transition: opacity 300ms
+
+
+.dish-title
+  font-weight: bold
+  color: $primary-color !important
+  margin: 0
+  font-size: $m-font-size
+
+.dish-ingredient
+  margin: 0
+  font-size: $s-font-size
+  font-style: italic
+  font-family: $font-family-noto-sans !important
+  font-weight: bold !important
+
+
+.image-wrapper
+  width: 100%
+  height: auto
+  overflow: hidden
+  > div
+    animation: zoom-in 3s
+
+
+@keyframes zoom-in
+  from
+    transform: scale(1.2)
+  to
+    transform: scale(1)
