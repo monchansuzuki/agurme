@@ -122,7 +122,10 @@ const Bbq = ({data}) => {
         <div className={style.line}/>
 
         <section>
+          <h2>予約</h2>
+
           <BBQContactComponent/>
+
         </section>
 
       </div>

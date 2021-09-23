@@ -88,7 +88,7 @@ const IndexPage = ({data}) => {
           </p>
         </div>
         <Link
-          className="button-black align-self-end grid-footer justify-self-end"
+          className="button-black align-self-center grid-footer justify-self-center"
           to="/restaurants"
           data-sal="slide-up"
           data-sal-duration="300"
@@ -184,12 +184,6 @@ const IndexPage = ({data}) => {
           </p>
 
         </div>
-
-        <GatsbyImage
-          className="bg-img-menu"
-          image={bbqBg!}
-          alt='bg'
-        />
 
         <div
           className="grid-left"

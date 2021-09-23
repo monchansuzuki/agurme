@@ -22,7 +22,7 @@ const Layout = ({children}) => {
     <div className="main-container">
       <Header siteTitle={data.site.siteMetadata?.title || `Title`}/>
 
-      <main style={{marginTop: '56px'}}>{children}</main>
+      <main style={{marginTop: '56px', position: 'relative', width: '100vw'}}>{children}</main>
       <footer>
         <PageHeaderComponent title={`Access`}/>
 
