@@ -1,15 +1,15 @@
 import * as React from "react"
 import {useState} from "react"
-import Layout from "../components/layout"
+import Layout from "../../components/layout"
 
 import {graphql, Link} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
-import ModalComponent from "../components/ModalComponent/ModalComponent";
-import {ClickableImageComponent} from "../components/ClickableImageComponent/ClickableImageComponent";
-import {PageHeaderComponent} from "../components/PageHeaderComponent/PageHeaderComponent";
+import ModalComponent from "../../components/ModalComponent/ModalComponent";
+import {ClickableImageComponent} from "../../components/ClickableImageComponent/ClickableImageComponent";
+import {PageHeaderComponent} from "../../components/PageHeaderComponent/PageHeaderComponent";
+import AccessComponent from "../../components/AccessComponent/AccessComponent";
 
-
-const IndexPage = ({data}) => {
+const Index = ({data}) => {
   const {umimaeImgData, ekimaeImgData, pizzaGuyImgData, barmanImgData, dialoImgData} = data;
   const umimaeImage = getImage(umimaeImgData);
   const ekimaeImg = getImage(ekimaeImgData);
@@ -64,8 +64,9 @@ const IndexPage = ({data}) => {
         </div>
       </section>
 
-
-      <div className="center-el"><Link className="button" to="/menu">メニューへ</Link></div>
+      <div className="center-el">
+        <Link className="button" to="/menu">メニューへ</Link>
+      </div>
     </Layout>
   );
 };
@@ -135,4 +136,4 @@ export const query = graphql`
     }
 `;
 
-export default IndexPage
+export default Index

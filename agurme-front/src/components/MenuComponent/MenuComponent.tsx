@@ -61,7 +61,7 @@ export default function MenuComponent(props: MyComponentProps) {
 
         {props.dish.map(
           (dish, i) => {
-            return (<div key={i}>
+            return (<div className={style.dishContainer} key={i}>
               <p className={style.dishTitle}>{dish.dishName}</p>
               <p className={style.dishIngredient}>{dish.dishIngredient}</p>
             </div>)

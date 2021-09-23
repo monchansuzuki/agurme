@@ -27,7 +27,6 @@ const Header = () => {
       <aside className={`sidebar ${isActive ? 'active' : ''}`}>
 
         <div className="menu-items">
-          <Link to="/" activeStyle={{color: "orange"}}>Home</Link>
           <Link to="/menu" activeStyle={{color: "orange"}}>Menu</Link>
           <Link to="/restaurants" activeStyle={{color: "orange"}}>Restaurant</Link>
           <Link to="/bbq" activeStyle={{color: "orange"}}>BBQ</Link>
