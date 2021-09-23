@@ -4,7 +4,7 @@
 
 .bg-img-container
   position: absolute
-  overflow-x: hidden
+  overflow: hidden
   top: 0
   left: 0
   right: 0
@@ -47,7 +47,34 @@
         bottom: 0.6em
         left: 1em
 
+.scroll
+  color: white
+  position: absolute
+  bottom: 15vh
+  left: calc(75% - 1em)
+  transform: rotate(90deg)
+  &:before
+    content: ""
+    position: absolute
+    background: white
+    width: 25vh
+    height: 1px
+    top: 100%
+  &:after
+    content: ""
+    position: absolute
+    background-color: white
+    border-radius: 50%
+    width: 8px
+    height: 8px
+    top: 88%
+    animation: scroll 1.3s ease-in infinite
 
+@keyframes scroll
+  from
+    left: 0%
+  to
+    left: 300%
 .bg-img-menu
   position: absolute !important
   top: 0

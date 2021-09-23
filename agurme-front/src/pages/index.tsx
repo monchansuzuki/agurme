@@ -55,6 +55,10 @@ const IndexPage = ({data}) => {
           More than a Beach
           <span className="highlight">Restaurant</span>
         </p>
+
+        <div className="scroll">
+          <span>SCROLL</span>
+        </div>
       </section>
 
       {/*RESTAURANT*/}
