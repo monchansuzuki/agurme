@@ -12,13 +12,13 @@ export default function AccessComponent(props: MyComponentProps) {
       <div className={style.category}>
         <strong> ChigasaKitchen アグルメ</strong>
         <p>住所 <br/>神奈川県茅ヶ崎市幸町23-18 渡辺ビル 1F</p>
-        <a className={style.link} href="https://www.google.fr/" target="_blank">Google マップ</a>
+        <a className={style.link} href="https://g.page/agrume1215?share" target="_blank">Google マップ</a>
       </div>
 
       <div className={style.category}>
         <strong> Pizzeria&Osteria AGRUME </strong>
         <p>住所 <br/>神奈川県茅ヶ崎市東海岸南6-3-26 シーサイドビル 1F</p>
-        <a className={style.link}  href="https://www.google.fr/" target="_blank" >Google マップ</a>
+        <a className={style.link}  href="https://goo.gl/maps/6W1hofU1G2ehiU6f6" target="_blank" >Google マップ</a>
       </div>
 
       <div className={style.category}>

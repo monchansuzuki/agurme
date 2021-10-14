@@ -27,7 +27,12 @@ const Layout = ({children}) => {
         <PageHeaderComponent title={`Access`}/>
 
         <AccessComponent/>
+        <div className="txt-center">
+
+        </div>
         <div className="line"/>
+
+
         <div className="txt-center">
 
           <strong>DIALLO CORPORATION </strong><br/>

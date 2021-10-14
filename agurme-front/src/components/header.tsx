@@ -20,7 +20,7 @@ const Header = () => {
         <div id="menu" className={`${isActive ? 'active' : ''}`}/>
       </div>
       <div className="link-reservation">
-        <Link to="">Reservation</Link>
+        <a href="https://www.hotpepper.jp/strJ001213017/yoyaku/hpds/?ROUTE_KBN=20" target="_blank">Reservation</a>
       </div>
 
 

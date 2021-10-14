@@ -239,45 +239,49 @@ const Index = ({data}) => {
   const [menu, setMenu] = useState<any>(dataMenu.filter(menu => menu.id === 1));
   return (
     <Layout>
-      <PageHeaderComponent title={`Menu`}/>
 
 
-      <div className={style.bgImage}>
-        <GatsbyImage
-          className="bg-img-menu"
-          image={bgImage!}
-          alt='bg'
+        <PageHeaderComponent title={`Menu`}/>
+
+
+        <div className={style.bgImage}>
+          <GatsbyImage
+            className="bg-img-menu"
+            image={bgImage!}
+            alt='bg'
+          />
+        </div>
+      <div className={style.container}>
+
+        <div className="section-wrapper">
+
+          <SectionHeaderComponent title={`REGULAR MENU`}/>
+        </div>
+        <p className={style.paragraph}>
+          ランチやディナーにおススメのメイン料理や、シェアに最適なサイドメニュー、
+          <br/>
+          食後のデザートなど幅広くご用意しております。
+          <br/>
+          AGURMEでしか食べられない、こだわりのメニューをお楽しみください。
+          <br/>
+          ※予告なく販売を終了とする場合がございます。
+        </p>
+
+
+        <div className={style.menuCategory}>
+          Category
+        </div>
+
+        <MenuNavigationComponent
+          className={style.menuNav}
+          onNavigate={e => setMenu(dataMenu.filter(menu => menu.id === e))}
         />
+
+
+        {menu.map(menu => (
+          <MenuComponent key={menu.id} menuTitle={menu.menuTitle} dish={menu.dish} menuImage={menu.image}/>
+        ))}
       </div>
-
-      <SectionHeaderComponent title={`REGULAR MENU`}/>
-
-      <p className={style.paragraph}>
-        ランチやディナーにおススメのメイン料理や、シェアに最適なサイドメニュー、
-        <br/>
-        食後のデザートなど幅広くご用意しております。
-        <br/>
-        AGURMEでしか食べられない、こだわりのメニューをお楽しみください。
-        <br/>
-        ※予告なく販売を終了とする場合がございます。
-      </p>
-
-
-      <div className={style.menuCategory}>
-        Category
-      </div>
-
-      <MenuNavigationComponent
-        className={style.menuNav}
-        onNavigate={e => setMenu(dataMenu.filter(menu => menu.id === e))}
-      />
-
-
-
-      {menu.map(menu => (
-        <MenuComponent key={menu.id} menuTitle={menu.menuTitle} dish={menu.dish} menuImage={menu.image}/>
-      ))}
-
     </Layout>
   )
 };
