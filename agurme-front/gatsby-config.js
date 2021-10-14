@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `Agurme`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+        description: `茅ヶ崎にある美味しいレストラン`,
         author: `@tamon`,
         siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     },
@@ -20,13 +20,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
+                name: `あグルメ`,
                 short_name: `starter`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
+                background_color: `rgba(247, 242, 1, 0.16)`,
+                theme_color: `#fff`,
                 display: `minimal-ui`,
-                icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+                icon: `src/images/agrume_logo.jpeg`, // This path is relative to the root of the site.
             },
         },
         {
