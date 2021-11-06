@@ -1,51 +1,67 @@
 import * as React from "react"
-import {useState} from "react"
+import { useState } from "react"
 import Layout from "../../components/layout"
 
-import {graphql, Link} from "gatsby"
-import {GatsbyImage, getImage} from "gatsby-plugin-image"
-import ModalComponent from "../../components/ModalComponent/ModalComponent";
-import {ClickableImageComponent} from "../../components/ClickableImageComponent/ClickableImageComponent";
-import {PageHeaderComponent} from "../../components/PageHeaderComponent/PageHeaderComponent";
+import { graphql, Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import ModalComponent from "../../components/ModalComponent/ModalComponent"
+import { ClickableImageComponent } from "../../components/ClickableImageComponent/ClickableImageComponent"
+import { PageHeaderComponent } from "../../components/PageHeaderComponent/PageHeaderComponent"
 
-const Index = ({data}) => {
-  const {umimaeImgData, ekimaeImgData, pizzaGuyImgData, barmanImgData, dialoImgData} = data;
-  const umimaeImage = getImage(umimaeImgData);
-  const ekimaeImg = getImage(ekimaeImgData);
-  const pizzaGuyImg = getImage(pizzaGuyImgData);
-  const barmanImg = getImage(barmanImgData);
-  const dialoImg = getImage(dialoImgData);
+const Index = ({ data }) => {
+  const {
+    umimaeImgData,
+    ekimaeImgData,
+    pizzaGuyImgData,
+    barmanImgData,
+    dialoImgData,
+  } = data
+  const umimaeImage = getImage(umimaeImgData)
+  const ekimaeImg = getImage(ekimaeImgData)
+  const pizzaGuyImg = getImage(pizzaGuyImgData)
+  const barmanImg = getImage(barmanImgData)
+  const dialoImg = getImage(dialoImgData)
 
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <Layout>
-
-      {openModal &&
-      <ModalComponent onClose={() => setOpenModal(false)}>
+      {openModal && (
+        <ModalComponent onClose={() => setOpenModal(false)}>
           <div>Hello</div>
-      </ModalComponent>
-      }
+        </ModalComponent>
+      )}
 
-      <PageHeaderComponent title={`About Us`}/>
+      <PageHeaderComponent title={`About Us`} />
 
-      <div className="container-flex " style={{gap: '4px', flexWrap: 'nowrap'}}>
-        <ClickableImageComponent onClick={() => setOpenModal(false)} image={umimaeImage!} text={`海にむかっていく、湘南らしいお店`}/>
-        <ClickableImageComponent onClick={() => setOpenModal(false)} image={ekimaeImg!} text={`駅前のお店`}/>
+      <div
+        className="container-flex "
+        style={{ gap: "4px", flexWrap: "nowrap" }}
+      >
+        <ClickableImageComponent
+          onClick={() => setOpenModal(false)}
+          image={umimaeImage!}
+          text={`海にむかっていく、湘南らしいお店`}
+        />
+        <ClickableImageComponent
+          onClick={() => setOpenModal(false)}
+          image={ekimaeImg!}
+          text={`駅前のお店`}
+        />
       </div>
 
-      <section className="section-1" style={{
-        display: 'flex',
-        justifyContent: 'center'
-      }}>
+      <section
+        className="section-1"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <div className="section-wrapper">
-
-
           <div className="section-body">
-            <GatsbyImage className="section-img" image={dialoImg!} alt='bg'/>
+            <GatsbyImage className="section-img" image={dialoImg!} alt="bg" />
             <article className="section-article">
               <h2 className="header-2">Our story</h2>
-
               都内イタリア料理店やファイブスターホテルレストランで経験を積んだ3人が、
               それぞれの技術を持ち寄って湘南エリア茅ケ崎に本格カジュアルイタリアンを初出店！500度の石窯で一気に焼き上げる本格ピッツァをメインに、
               魚介は平塚の漁港や鎌倉から直仕入れ、地元野菜や鎌倉で上がったタコなど現地食材をふんだんに使用。
@@ -53,15 +69,20 @@ const Index = ({data}) => {
             </article>
           </div>
 
-
-          <GatsbyImage className="img-container" image={pizzaGuyImg!} alt='bg'/>
-
+          <GatsbyImage
+            className="img-container"
+            image={pizzaGuyImg!}
+            alt="bg"
+          />
 
           <div className="section-body-2">
-            <GatsbyImage className="section-img-left" image={barmanImg!} alt='bg'/>
+            <GatsbyImage
+              className="section-img-left"
+              image={barmanImg!}
+              alt="bg"
+            />
             <article className="section-article-right">
               <h2 className="header-2 ">Our Vision</h2>
-
               アグルメは、人を愛する心と、家庭的な雰囲気の中で素晴らしい料理と飲み物、そして最高のサービスを楽しむことができるレストランを作りたいというビジョンから生まれました。
             </article>
           </div>
@@ -69,75 +90,77 @@ const Index = ({data}) => {
       </section>
 
       <div className="center-el">
-        <Link className="button" to="/menu">メニューへ</Link>
+        <Link className="button" to="/menu">
+          メニューへ
+        </Link>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
-    query {
-        umimaeImgData: file(relativePath: {eq: "restaurants/umimae.jpeg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: {quality: 80}
-                    transformOptions: {}
-                    blurredOptions: {toFormat: PNG, width: 10}
-                )
-            }
-        }
-        ekimaeImgData: file(relativePath: {eq: "restaurants/ekimae.jpeg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: {quality: 80}
-                    transformOptions: {}
-                    blurredOptions: {toFormat: PNG, width: 10}
-                )
-            }
-        }
-        pizzaGuyImgData: file(relativePath: {eq: "restaurants/pizza-guy.jpeg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: {quality: 80}
-                    transformOptions: {}
-                    blurredOptions: {toFormat: PNG, width: 10} 
-                )
-            }
-        }
-        barmanImgData: file(relativePath: {eq: "restaurants/barman.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: {quality: 80}
-                    transformOptions: {}
-                    blurredOptions: {toFormat: PNG, width: 10}
-                )
-            }
-        }
-        dialoImgData: file(relativePath: {eq: "restaurants/dialo.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: {quality: 80}
-                    transformOptions: {}
-                    blurredOptions: {toFormat: PNG, width: 10}
-                )
-            }
-        }
+  query {
+    umimaeImgData: file(relativePath: { eq: "restaurants/umimae.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+          quality: 50
+          webpOptions: { quality: 80 }
+          transformOptions: {}
+          blurredOptions: { toFormat: PNG, width: 10 }
+        )
+      }
     }
-`;
+    ekimaeImgData: file(relativePath: { eq: "restaurants/ekimae.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+          quality: 50
+          webpOptions: { quality: 80 }
+          transformOptions: {}
+          blurredOptions: { toFormat: PNG, width: 10 }
+        )
+      }
+    }
+    pizzaGuyImgData: file(relativePath: { eq: "restaurants/pizza-guy.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+          quality: 50
+          webpOptions: { quality: 80 }
+          transformOptions: {}
+          blurredOptions: { toFormat: PNG, width: 10 }
+        )
+      }
+    }
+    barmanImgData: file(relativePath: { eq: "restaurants/barman.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+          quality: 50
+          webpOptions: { quality: 80 }
+          transformOptions: {}
+          blurredOptions: { toFormat: PNG, width: 10 }
+        )
+      }
+    }
+    dialoImgData: file(relativePath: { eq: "restaurants/dialo.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+          quality: 50
+          webpOptions: { quality: 80 }
+          transformOptions: {}
+          blurredOptions: { toFormat: PNG, width: 10 }
+        )
+      }
+    }
+  }
+`
 
 export default Index

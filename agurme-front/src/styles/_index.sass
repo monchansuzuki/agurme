@@ -12,15 +12,14 @@
   @media #{$mq-small}
     background-color: $accent-color
   .bg-img-header
-    width: 100%
     height: 100%
     filter: brightness(0.7)
     @media #{$mq-small}
       width: auto
   .welcome-message
     position: absolute
-    top: 40%
-    right: 10%
+    top: 5%
+    right: 30%
     display: flex
     flex-direction: column
     font-family: Futura, serif
@@ -42,7 +41,7 @@
         content: ""
         position: absolute
         height: 5px
-        width: 9ch
+        width: 15ch
         background-color: yellow
         bottom: 0.6em
         left: 1em
@@ -89,3 +88,31 @@
   max-width: 760px
   align-self: center
   gap: 16px
+
+.quote
+  width: 90%
+  border: solid
+  padding: 16px
+  border-radius: 40px
+
+.image-profile
+  width: 42px
+  height: auto
+  border-radius: 50%
+
+.profile-name
+  font-size: .8rem
+
+.flex-hori
+  display: grid
+  grid-template-columns: 25% 75%
+  justify-items: center
+
+.flex-veri
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: 4px
+
+

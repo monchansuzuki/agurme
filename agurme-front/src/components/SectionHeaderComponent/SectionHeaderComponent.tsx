@@ -1,9 +1,9 @@
-import React from 'react';
-import * as style from "./SectionHeaderComponent.module.sass";
+import React from "react"
+import * as style from "./SectionHeaderComponent.module.sass"
 
 type SectionHeaderComponentProps = {
-  title: string;
-  titleSub?: string;
+  title: string
+  titleSub?: string
 }
 
 export function SectionHeaderComponent(props: SectionHeaderComponentProps) {
@@ -11,6 +11,5 @@ export function SectionHeaderComponent(props: SectionHeaderComponentProps) {
     <div className={style.title}>
       <h2>{props.title}</h2>
     </div>
-  );
+  )
 }
-
