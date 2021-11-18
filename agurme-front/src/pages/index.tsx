@@ -12,12 +12,16 @@ const IndexPage = ({data}) => {
     imageRestaurantData,
     menuImagesData,
     profile1,
+    profile2,
+    profile3,
     chigsakiBBQData,
   } = data
   const bgImage = getImage(bgImageData)
   const imageRestaurant = getImage(imageRestaurantData)
   const bbqImage = getImage(chigsakiBBQData)
   const profile1Img = getImage(profile1)
+  const profile2Img = getImage(profile2)
+  const profile3Img = getImage(profile3)
 
   // restaurant ImageGallery
 
@@ -150,7 +154,7 @@ const IndexPage = ({data}) => {
 
             <div className="flex-hori">
               <div className="flex-veri">
-                <GatsbyImage className="image-profile" image={profile1Img!} alt="image1"/>
+                <GatsbyImage className="image-profile" image={profile2Img!} alt="image1"/>
                 <span className="profile-name">Miho “ママブー”</span>
               </div>
             <figure className="quote">
@@ -166,7 +170,7 @@ const IndexPage = ({data}) => {
 
             <div className="flex-hori">
               <div className="flex-veri">
-                <GatsbyImage className="image-profile" image={profile1Img!} alt="image1"/>
+                <GatsbyImage className="image-profile" image={profile3Img!} alt="image1"/>
                 <span className="profile-name">康成</span>
               </div>
             <figure className="quote">
@@ -294,7 +298,31 @@ export const query = graphql`
                 )
             }
         }
-        profile1: file(relativePath: { eq: "profiles/profile-1.jpg" }) {
+        profile1: file(relativePath: { eq: "profiles/profile1.jpeg" }) {
+            childImageSharp {
+                gatsbyImageData(
+                    placeholder: DOMINANT_COLOR
+                    formats: [AUTO, WEBP, AVIF]
+                    quality: 50
+                    webpOptions: { quality: 80 }
+                    transformOptions: { cropFocus: NORTHWEST, fit: COVER }
+                    blurredOptions: { toFormat: PNG, width: 10 }
+                )
+            }
+        }
+        profile2: file(relativePath: { eq: "profiles/profile2.jpeg" }) {
+            childImageSharp {
+                gatsbyImageData(
+                    placeholder: DOMINANT_COLOR
+                    formats: [AUTO, WEBP, AVIF]
+                    quality: 50
+                    webpOptions: { quality: 80 }
+                    transformOptions: { cropFocus: NORTHWEST, fit: COVER }
+                    blurredOptions: { toFormat: PNG, width: 10 }
+                )
+            }
+        }
+        profile3: file(relativePath: { eq: "profiles/profile3.jpg" }) {
             childImageSharp {
                 gatsbyImageData(
                     placeholder: DOMINANT_COLOR
