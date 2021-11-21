@@ -27,7 +27,7 @@ const Bbq = ({ data }) => {
       <div className={style.containerCenter}>
         <div className={style.container}>
           <p className={style.highlight}>
-            茅ヶ崎の美しい環境の中で、美味しいものを食べて素敵な時間を過ごしましょう
+            湘南茅ヶ崎の風を感じながら、家族や仲間と楽しい時間を手ぶらBBQで楽しもう！
           </p>
 
           <div className={style.priceContainer}>
@@ -73,7 +73,7 @@ const Bbq = ({ data }) => {
             </BBQCardComponent>
 
             <h3 className={style.highlightNormal}>
-              手ぶらで気軽にBBQを楽しみたいあなたにおすすめ！
+              さらにこちらをプラスで完全手ブラになれる！！
             </h3>
 
             <BBQCardComponent
@@ -164,7 +164,7 @@ const Bbq = ({ data }) => {
 
 export const query = graphql`
   query {
-    bgImageData: file(relativePath: { eq: "bbq/bbq-bg.jpg" }) {
+    bgImageData: file(relativePath: { eq: "bbq/bbq-bg.jpeg" }) {
       childImageSharp {
         gatsbyImageData(
           placeholder: DOMINANT_COLOR
