@@ -59,7 +59,7 @@ const Index = ({ data }) => {
       >
         <div className="section-wrapper">
           <div className="section-body">
-            <GatsbyImage className="section-img" image={dialoImg!} alt="bg" />
+            <GatsbyImage className="section-img" image={barmanImg!} alt="bg" />
             <article className="section-article">
               <h2 className="header-2">Our story</h2>
               都内イタリア料理店やファイブスターホテルレストランで経験を積んだ3人が、
@@ -78,7 +78,7 @@ const Index = ({ data }) => {
           <div className="section-body-2">
             <GatsbyImage
               className="section-img-left"
-              image={barmanImg!}
+              image={dialoImg!}
               alt="bg"
             />
             <article className="section-article-right">
