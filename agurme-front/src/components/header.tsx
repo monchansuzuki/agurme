@@ -110,8 +110,9 @@ const Header = () => {
           <div className="container-icons">
             <a className="flex-center-2" href="https://www.instagram.com/agrume_chigasaki/?hl=ja" target="_blank">
               <StaticImage className="image-icon" src="../images/instagram.png" alt="bg"/>
-              【1ドリンク無料】Instagramフォロー
+              ←ココをタップしてフォローしてくれた方には1ドリンクサービス致します♪
             </a>
+            <p className="flex-center-2">※店頭でインスタフォロー確認させていただきます。</p>
             <div className="flex-center-2">
               <a href="https://tabelog.com/kanagawa/A1404/A140406/14073722/" target="_blank">
                 <StaticImage className="image-icon" src="../images/tabelog.png" alt="bg"/>

@@ -73,7 +73,8 @@ const Bbq = ({ data }) => {
             </BBQCardComponent>
 
             <h3 className={style.highlightNormal}>
-              さらにこちらをプラスで完全手ブラになれる！！
+              さらにこちらをプラスで完全に
+              手ぶらで楽しめます‼️
             </h3>
 
             <BBQCardComponent
