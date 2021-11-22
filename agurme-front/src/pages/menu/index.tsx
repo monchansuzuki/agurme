@@ -1,20 +1,20 @@
-import React, { useState } from "react"
+import React, {useState} from "react"
 import Layout from "../../components/layout"
 import MenuComponent from "../../components/MenuComponent/MenuComponent"
 import MenuNavigationComponent from "../../components/MenuNavigationComponent/MenuNavigationComponent"
-import { PageHeaderComponent } from "../../components/PageHeaderComponent/PageHeaderComponent"
-import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {PageHeaderComponent} from "../../components/PageHeaderComponent/PageHeaderComponent"
+import {graphql} from "gatsby"
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import * as style from "./menu.module.sass"
-import { SectionHeaderComponent } from "../../components/SectionHeaderComponent/SectionHeaderComponent"
+import {SectionHeaderComponent} from "../../components/SectionHeaderComponent/SectionHeaderComponent"
 
 export type dishType = {
   dishName: string
   dishIngredient?: string
 }
 
-const Index = ({ data }) => {
-  const { bgImageData } = data
+const Index = ({data}) => {
+  const {bgImageData} = data
   const dataMenu = [
     {
       id: 1,
@@ -23,65 +23,63 @@ const Index = ({ data }) => {
       dish: [
         {
           dishName: "マルゲリータ",
-          dishIngredient: "トマトソース・バジル・モッツァレラ",
+          dishIngredient: "香り高いトマトソースとバジルがモッツァレラチーズと絶妙にマッチした一押しピザです。",
         },
         {
           dishName: "マリナーラ",
           dishIngredient:
-            "トマトソース・アンチョビ・バジル・ニンニク・チェリートマト・オレガノ",
+            "トマトソースベースにアンチョビ、チェリートマト、ニンニクの抜群の相性がたまらない一品！！",
         },
         {
           dishName: "モルタデッラ",
-          dishIngredient: "トマトソース・モルタデッラハム・モッツァレラ",
+          dishIngredient: "トマトソースベースに大判のモルタデッラハムとモッツァレラチーズをふんだんに使用した食べ応え満点のピッツァです。",
         },
         {
           dishName: "フンギポルチーニ",
           dishIngredient:
-            "ポルチーニソース・3種のきのこ・モッツァレラ・ニンニク",
+            "香り高いポルチーニソースとニンニクで３種類のきのこの香りをさらに引き立てる一品です。",
         },
         {
           dishName: "クアトロフォルマッジ",
           dishIngredient:
-            "モッツァレラ・タレッジョ・ゴルゴンゾーラ・パルミジャーノ・はちみつ付",
+            "『モッツァレラチーズ』『タレッジョ』『ゴルゴンゾーラ』『パルミジャーノ』と人気のチーズを終結させたチーズ好きにはたまらない一品。お好みでハチミツをかけると味変を楽しめます♪",
         },
         {
           dishName: "サルシッチャ",
-          dishIngredient: "自家製ソーセージミート・ほうれん草・モッツァレラ",
+          dishIngredient: "自家製ソーセージミートとほうれん草の最強タッグで食欲をそそるピッツァです。",
         },
         {
           dishName: "マルゲリータビアンカドック",
-          dishIngredient: "水牛モッツァレラ・バジル・チェリートマト・オレガノ",
+          dishIngredient: "弾力あるフレッシュな水牛モッツァレラに香り高いバジル・チェリートマト・オレガノを添えて。シンプルだけど満足な一品ピッツァです。",
         },
         {
           dishName: "プロシュート エ ルーコラ",
           dishIngredient:
-            "モッツァレラ・生ハム・チェリートマト・ルッコラ・パルミジャーノ",
+            "こだわりの生ハムとフレッシュなチェリートマト、ルッコラを添えてパルミジャーノチーズをアクセントにした爽やかなピッツァ",
         },
         {
           dishName: "ディアボラ",
           dishIngredient:
-            "トマトソース・サラミ・鶏モモ肉・唐辛子・モッツァレラ",
+            "ピリ辛のトマトソースをベースにイタリアンサラミとモッツァレラをふんだんに使ったやみつきになるスパイシーピザです。",
         },
         {
           dishName: "ビスマルク",
-          dishIngredient: "トマトソース・生ハム・卵・きのこ・モッツァレラ",
+          dishIngredient: "トマトソースに生ハムと新鮮卵、きのこをモッツァレラチーズで包みこむような絶妙なハーモニーが味わえる一品です。",
         },
         {
-          dishName: "チチニエリ",
+          dishName: "釜揚げしらすのチチニエリ",
           dishIngredient:
-            "トマトソース・シラス・オレガノ・チェリートマト・にんにく",
+            "湘南で獲れた新鮮な『しらす』をたっぷりと堪能できる贅沢なアグルメオリジナル海鮮ピザです。",
         },
         {
           dishName: "マーレ",
           dishIngredient:
-            "ジェノベーゼソース・魚介類・チェリートマト・モッツァレラ",
+            "たっぷりのジェノベーゼソースにエビやたこなどの魚介類とチェリートマトで地中海ピッツァをお楽しみください。",
         },
         {
           dishName: "トッピング",
           dishIngredient:
-            "チェリートマト、 水牛モッツァレラ、生ハム、 モルタデッラハム、\n" +
-            "              サラミ、ルッコラ、卵、ニンニク、アンチョビ、ブラックオリーブ、ダブルチーズ...\n" +
-            "            ",
+            "さらに自分好みのオリジナルピッツァにしたい方は、お好きなトッピングをたっぷりどうぞ。チェリートマト、 水牛モッツァレラ、生ハム、 モルタデッラハム、 サラミ、ルッコラ、卵、ニンニク、アンチョビ、ブラックオリーブ、ダブルチーズs",
         },
       ],
     },
@@ -247,23 +245,24 @@ const Index = ({ data }) => {
   const [menu, setMenu] = useState<any>(dataMenu.filter(menu => menu.id === 1))
   return (
     <Layout>
-      <PageHeaderComponent title={`Menu`} />
+      <PageHeaderComponent title={`Menu`}/>
 
       <div className={style.bgImage}>
-        <GatsbyImage className="bg-img-menu" image={bgImage!} alt="bg" />
+        <GatsbyImage className="bg-img-menu" image={bgImage!} alt="bg"/>
       </div>
       <div className={style.container}>
         <div className="section-wrapper">
-          <SectionHeaderComponent title={`REGULAR MENU`} />
+          <SectionHeaderComponent title={`REGULAR MENU`}/>
         </div>
         <p className={style.paragraph}>
-          ランチやディナーにおススメのメイン料理や、シェアに最適なサイドメニュー、
-          <br />
-          食後のデザートなど幅広くご用意しております。
-          <br />
-          AGURMEでしか食べられない、こだわりのメニューをお楽しみください。
-          <br />
-          ※予告なく販売を終了とする場合がございます。
+          ランチやディナーにオススメなアグルメこだわりピザ＆パスタでおもてなしいたします。
+          <br/>
+          「季節限定メニュー」や「シェフのオススメメニュー」をご用意しております。
+          <br/>
+          アグルメでしか味わえない、こだわりの食事をお楽しみください。
+          <br/>
+          ※一部、予告なしにその日の状況によりメニュー変更・中止をする場合がございます。<br/>
+          ご了承下さい。詳細はスタッフまでお尋ねください。
         </p>
 
         <div className={style.menuCategory}>Category</div>

@@ -53,8 +53,8 @@ const Bbq = ({ data }) => {
                   食材をお持ち込みされたいこだわり派のあなたにおすすめ。
                 </p>
                 <ul className={style.menuList}>
-                  <li className={style.menuTitle}>グﾘル1台につき最大11名</li>
-                  <li className={style.menuTitle}>椅子人数分貸出最大20名</li>
+                  <li className={style.menuTitle}>グﾘル1台につき最大11名まで</li>
+                  <li className={style.menuTitle}>椅子人数分貸出最大20名まで</li>
                   <li className={style.menuTitle}>炭</li>
                   <li className={style.menuTitle}>クーラーボックス1台</li>
                   <li className={style.menuTitle}>

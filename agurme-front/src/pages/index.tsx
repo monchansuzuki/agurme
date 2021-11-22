@@ -99,7 +99,7 @@ const IndexPage = ({data}) => {
               ったタコなど現地食材をふんだんに使用。
             </p>
             <p>
-              料理は本格派ですが、スタッフとお客様の距離が近いカジュアルなイタリアンです。
+              料理は本格派ですが、スタッフとお客様の距離が近いカジュアルイタリアン料理店です。
             </p>
           </div>
           <Link
@@ -141,12 +141,13 @@ const IndexPage = ({data}) => {
             <div className="flex-hori">
               <div className="flex-veri">
                 <GatsbyImage className="image-profile" image={profile1Img!} alt="image1"/>
-                <span className="profile-name">バイクこちゃん</span>
+                <span className="profile-name">Shokichさん</span>
               </div>
               <figure className="quote">
                 <blockquote>
                   <span>“</span>
-                  どの料理も美味しく、店の雰囲気も良くまた訪れたい店です。
+                  アグルメ名物の「レモンクリームソース」パスタがとっても美味しい！！<br/>
+                  サイドメニューもおいしく、お酒に合う！！夜はテラス席でお酒と雰囲気を楽しめます♪
                   <span>“</span>
                 </blockquote>
               </figure>
@@ -155,14 +156,14 @@ const IndexPage = ({data}) => {
             <div className="flex-hori">
               <div className="flex-veri">
                 <GatsbyImage className="image-profile" image={profile2Img!} alt="image1"/>
-                <span className="profile-name">Miho “ママブー”</span>
+                <span className="profile-name">ピザ大好きパパさん</span>
               </div>
             <figure className="quote">
               <blockquote>
                 <span>“</span>
-                ランチがオススメ！お得なピザかパスタにデザート、ドリンク、プラスメインが付くコースもあり。
-                とにかくピザが美味しい❗️
-                蜂蜜とチーズのフォルマッジと、ピリ辛のサルシッチャが最高
+                定番ピザの「マルゲリータ」と「マーレ」「フンギ　ポルチーニ」がおすすめ！！<br/>
+                天気が悪い日や仕事で疲れた日はデリバリーやテイクアウト頼めて便利です♪<br/>
+                休日には家族や仲間とBBQレンタルをしてBBQが楽しめるのもおすすめです。
                 <span>“</span>
               </blockquote>
             </figure>
@@ -171,14 +172,14 @@ const IndexPage = ({data}) => {
             <div className="flex-hori">
               <div className="flex-veri">
                 <GatsbyImage className="image-profile" image={profile3Img!} alt="image1"/>
-                <span className="profile-name">康成</span>
+                <span className="profile-name">チーズ大好きさん</span>
               </div>
             <figure className="quote">
               <blockquote>
                 <span>“</span>
-                夜にテイクアウトして家で食べてみました。マルゲリータ、美味しかったです。
-                あとクワトロフォルマッジエミエーレはゴルゴンゾーラ、モッツエラなどに別カップでハチミツがついていてこれもまた美味しかった。
-                とってもおすすめです。
+                「クアトロフォルマッジ」は3種類の <br/>
+                チーズをふんだんに使用しているのでチーズ好きにはオススメです！！<br/>
+                他にも「フンギ　ポルチーニ」や「チチニエリ」も海や山の素材を楽しめてオススメです。
                 <span>“</span>
               </blockquote>
             </figure>

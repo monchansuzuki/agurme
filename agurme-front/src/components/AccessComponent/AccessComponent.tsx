@@ -13,7 +13,7 @@ export default function AccessComponent(props: MyComponentProps) {
           住所 <br />
           神奈川県茅ヶ崎市幸町23-18 渡辺ビル 1F
           <br/>
-          茅ヶ崎駅から15分
+          茅ヶ崎駅から2分
           <br/>
           <a
             className={style.link}
@@ -71,7 +71,7 @@ export default function AccessComponent(props: MyComponentProps) {
         <p>
           住所 <br />
           神奈川県茅ヶ崎市東海岸南6-3-26 シーサイドビル 1F<br />
-          茅ヶ崎駅から5分
+          茅ヶ崎駅から15分
           <br/>
 
           <a
