@@ -20,6 +20,7 @@ const Index = ({data}) => {
       id: 1,
       menuTitle: "ピザ",
       image: "pizza-menu",
+      relativeDirectory: 'foods/pizza',
       dish: [
         {
           dishName: "マルゲリータ",
@@ -87,6 +88,7 @@ const Index = ({data}) => {
       id: 2,
       menuTitle: "パスタ",
       image: "pasta-menu",
+      relativeDirectory: 'foods/pasta',
       dish: [
         {
           dishName: "浅利のペペロンチーノ ボンゴレ",
@@ -123,6 +125,7 @@ const Index = ({data}) => {
     {
       id: 3,
       menuTitle: "Second Piatto",
+      relativeDirectory: 'foods/second',
       image: "second-menu",
       dish: [
         {
@@ -143,6 +146,7 @@ const Index = ({data}) => {
       id: 4,
       menuTitle: "ANTIPASTO",
       image: "anti-menu",
+      relativeDirectory: 'foods/anti',
       dish: [
         {
           dishName: "グリルソーセージ 2p",
@@ -205,6 +209,7 @@ const Index = ({data}) => {
       id: 5,
       menuTitle: "INSALATA",
       image: "insalada-menu",
+      relativeDirectory: 'foods/salad',
       dish: [
         {
           dishName: "トマトと水牛モッツァレラのカプレーゼ",
@@ -222,6 +227,7 @@ const Index = ({data}) => {
       id: 6,
       menuTitle: "DOLCE",
       image: "dolce-menu",
+      relativeDirectory: 'foods/dolce',
       dish: [
         {
           dishName: "マスカルポーネをたっぷり使った自家製ティラミス",
@@ -277,6 +283,7 @@ const Index = ({data}) => {
             key={menu.id}
             menuTitle={menu.menuTitle}
             dish={menu.dish}
+            relativeDirectory={menu.relativeDirectory}
             menuImage={menu.image}
           />
         ))}

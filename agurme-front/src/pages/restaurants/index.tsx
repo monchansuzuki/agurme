@@ -41,12 +41,12 @@ const Index = ({ data }) => {
         <ClickableImageComponent
           onClick={() => setOpenModal(false)}
           image={umimaeImage!}
-          text={`海にむかっていく、湘南らしいお店`}
+          text={`本店`}
         />
         <ClickableImageComponent
           onClick={() => setOpenModal(false)}
           image={ekimaeImg!}
-          text={`駅前のお店`}
+          text={`駅前店`}
         />
       </div>
 

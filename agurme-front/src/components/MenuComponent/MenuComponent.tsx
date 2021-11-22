@@ -1,13 +1,15 @@
-import React, { useEffect, useLayoutEffect, useState } from "react"
+import React, {useLayoutEffect, useState} from "react"
 import * as style from "./menu-component.module.sass"
-import { CSSTransition } from "react-transition-group"
-import { dishType } from "../../pages/menu/index"
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {CSSTransition} from "react-transition-group"
+import {dishType} from "../../pages/menu/index"
+import {graphql, useStaticQuery} from "gatsby"
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
+import ImageGalleryComponent from "../ImagesGalleryComponent/ImageGalleryComponent";
 
 export type MyComponentProps = {
   menuTitle: string
   menuImage: string
+  relativeDirectory: string
   dish: dishType[]
 }
 
@@ -15,31 +17,30 @@ export default function MenuComponent(props: MyComponentProps) {
   const [inState, setInState] = useState(false)
 
   const imagesData = useStaticQuery(graphql`
-    query {
-      bgImageData: allFile {
-        nodes {
-          name
-          childImageSharp {
-            gatsbyImageData(
-              placeholder: DOMINANT_COLOR
-              formats: [AUTO, WEBP, AVIF]
-              quality: 50
-              webpOptions: { quality: 80 }
-              transformOptions: { cropFocus: NORTHWEST, fit: COVER }
-              blurredOptions: { toFormat: PNG, width: 10 }
-              height: 400
-            )
-          }
-        }
+  query {
+  images: allFile(
+    filter: {relativePath: {}, relativeDirectory: {glob: "*foods/*"}}
+  ) {
+    nodes {
+      name
+      relativeDirectory
+      relativePath
+      childImageSharp {
+        gatsbyImageData(aspectRatio: 1.5, formats: JPG, tracedSVGOptions: {}, height: 240)
       }
     }
+  }
+}
   `)
-  const imageData = imagesData.bgImageData.nodes.find(
-    node => node.name === props.menuImage
-  )
-  console.log(imageData)
-  const image = getImage(imageData)
+  console.log(imagesData);
+  const imagesDatas = imagesData.images.nodes.filter(
+    node => node.relativeDirectory === props.relativeDirectory
+  ).map(node => ({
+    data: getImage(node.childImageSharp),
+    alt: 'sdsd'
+  }))
 
+  console.log(imagesDatas);
   useLayoutEffect(() => {
     setInState(true)
   })
@@ -57,7 +58,7 @@ export default function MenuComponent(props: MyComponentProps) {
     >
       <div className={style.container}>
         <div className={style.imageWrapper}>
-          <GatsbyImage image={image!} alt="bg" />
+         <ImageGalleryComponent images={imagesDatas}/>
         </div>
 
         {props.dish.map((dish, i) => {
