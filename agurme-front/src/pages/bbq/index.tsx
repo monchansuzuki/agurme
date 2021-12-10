@@ -6,12 +6,12 @@ import BBQCardComponent from "../../components/BBQCardComponent/BBQCardComponent
 import BBQContactComponent from "../../components/BBQContactComponent/BBQContactComponent"
 import * as style from "./bbq.module.sass"
 
-const Bbq = ({ data }) => {
+const Bbq = ({ data, location }) => {
   const { bgImageData } = data
   const bgImage = getImage(bgImageData)
 
   return (
-    <Layout>
+    <Layout location={location}>
       <div className={style.bgImage}>
         <GatsbyImage
           className="bg-img-header"

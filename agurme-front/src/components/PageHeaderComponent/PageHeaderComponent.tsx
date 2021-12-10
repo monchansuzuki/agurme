@@ -8,8 +8,8 @@ type PageHeaderComponentProps = {
 export function PageHeaderComponent(props: PageHeaderComponentProps) {
   return (
     <div className={style.container}>
-      {props.title.split("　").map(letter => (
-        <span>{letter}</span>
+      {props.title.split("　").map((letter, i) => (
+        <span key={i}>{letter}</span>
       ))}
     </div>
   )

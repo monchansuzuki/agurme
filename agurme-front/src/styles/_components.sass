@@ -1,7 +1,7 @@
 // Button
 .button
   width: max-content
-  padding: .4em 1.5em
+  padding: 1em 1.5em
   border: solid 1px black
   &-white
     @extend .button
@@ -11,8 +11,10 @@
       color: white
   &-black
     @extend .button
-    background-color: black
-    color: white
+    background-color: white
+    color: black
+    border: solid 1px black
+    font-weight: bold
     &:active, &:hover, &:focus
       background-color: white
       color: black
@@ -73,7 +75,7 @@
 // Button
 .button
   width: max-content
-  padding: .4em 1.5em
+  padding: .6em 3em
   border: solid 1px black
   &-white
     @extend .button
@@ -83,16 +85,27 @@
       color: white
   &-black
     @extend .button
-    background-color: black
-    color: white
+    background-color: white
+    color: black
+    border: solid 1px black
+    display: flex
+    gap: 8px
+    align-items: center
     &:active, &:hover, &:focus
       background-color: white
       color: black
 
 
 // dirty
+.big-line
+  width: 100vw
+  height: 8px
+  background-color: black
 
-
+.short-line
+  width: 100vw
+  height: 1px
+  background-color: grey
 
 .image-container
   position: relative

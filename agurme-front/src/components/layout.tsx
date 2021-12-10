@@ -7,7 +7,8 @@ import "./layout.css"
 import { PageHeaderComponent } from "../components/PageHeaderComponent/PageHeaderComponent"
 import AccessComponent from "../components/AccessComponent/AccessComponent"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
+  console.log(location);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,7 +21,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="main-container">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header location={location} siteTitle={data.site.siteMetadata?.title || `Title`} />
 
       <main style={{ marginTop: "56px", position: "relative", width: "100vw" }}>
         {children}
@@ -28,8 +29,8 @@ const Layout = ({ children }) => {
       <footer>
         <PageHeaderComponent title={`Access`} />
 
-        <AccessComponent />
-        <div className="txt-center"></div>
+        <AccessComponent location={location}/>
+        <div className="txt-center"/>
         <div className="line" />
 
         <div className="txt-center">

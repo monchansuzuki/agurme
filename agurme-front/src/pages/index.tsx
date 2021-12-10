@@ -1,27 +1,24 @@
 import * as React from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faChevronRight
+} from '@fortawesome/free-solid-svg-icons'
 import Layout from "../components/layout"
 import {graphql, Link} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {Helmet} from "react-helmet"
 import ImageGalleryComponent from "../components/ImagesGalleryComponent/ImageGalleryComponent"
 
-const IndexPage = ({data}) => {
+
+const IndexPage = ({data, location}) => {
   // images
   const {
     bgImageData,
-    imageRestaurantData,
     menuImagesData,
-    profile1,
-    profile2,
-    profile3,
     chigsakiBBQData,
   } = data
   const bgImage = getImage(bgImageData)
-  const imageRestaurant = getImage(imageRestaurantData)
   const bbqImage = getImage(chigsakiBBQData)
-  const profile1Img = getImage(profile1)
-  const profile2Img = getImage(profile2)
-  const profile3Img = getImage(profile3)
 
   // restaurant ImageGallery
 
@@ -41,7 +38,7 @@ const IndexPage = ({data}) => {
     }
   })
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet
         htmlAttributes={{
           lang: "jp",
@@ -82,12 +79,15 @@ const IndexPage = ({data}) => {
             data-sal-easing="easeOutQuint"
             style={{right: "0"}}
           >
-            <div className="sub-title">雰囲気</div>
-            <div className="primary-title">Atmosphere</div>
+            <div className="sub-title">レストラン</div>
+            <div className="primary-title">Restaurant</div>
           </h2>
 
+          <ImageGalleryComponent images={menuImages}/>
+
+
           <div
-            className="paragraph-body grid-right"
+            className="grid-right margin-top-big"
             data-sal="slide-down"
             data-sal-duration="300"
             data-sal-delay="5"
@@ -102,6 +102,7 @@ const IndexPage = ({data}) => {
               料理は本格派ですが、スタッフとお客様の距離が近いカジュアルイタリアン料理店です。
             </p>
           </div>
+
           <Link
             className="button-black align-self-center grid-footer justify-self-center"
             to="/restaurants"
@@ -110,93 +111,17 @@ const IndexPage = ({data}) => {
             data-sal-delay="5"
             data-sal-easing="easeOutQuint"
           >
-            More
-          </Link>
-          <div
-            className="grid-left"
-            data-sal="slide-down"
-            data-sal-duration="300"
-            data-sal-delay="5"
-            data-sal-easing="easeOutQuint"
-          >
-            <GatsbyImage
-              className="grid-1-4"
-              image={imageRestaurant!}
-              alt="bg"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/*MENU*/}
-      <section className="flex-column container bg-dark section-1">
-        <div className="section-wrapper">
-          <h2 className=" align-self-end title-right grid-header" style={{marginRight: '16px'}}>
-            <div className="sub-title">フード</div>
-            <div className="primary-title">Food</div>
-          </h2>
-
-          <div className="grid-left">
-
-            <div className="flex-hori">
-              <div className="flex-veri">
-                <GatsbyImage className="image-profile" image={profile1Img!} alt="image1"/>
-                <span className="profile-name">Shokichさん</span>
-              </div>
-              <figure className="quote">
-                <blockquote>
-                  <span>“</span>
-                  アグルメ名物の「レモンクリームソース」パスタがとっても美味しい！！<br/>
-                  サイドメニューもおいしく、お酒に合う！！夜はテラス席でお酒と雰囲気を楽しめます♪
-                  <span>“</span>
-                </blockquote>
-              </figure>
-            </div>
-
-            <div className="flex-hori">
-              <div className="flex-veri">
-                <GatsbyImage className="image-profile" image={profile2Img!} alt="image1"/>
-                <span className="profile-name">ピザ大好きパパさん</span>
-              </div>
-            <figure className="quote">
-              <blockquote>
-                <span>“</span>
-                定番ピザの「マルゲリータ」と「マーレ」「フンギ　ポルチーニ」がおすすめ！！<br/>
-                天気が悪い日や仕事で疲れた日はデリバリーやテイクアウト頼めて便利です♪<br/>
-                休日には家族や仲間とBBQレンタルをしてBBQが楽しめるのもおすすめです。
-                <span>“</span>
-              </blockquote>
-            </figure>
-            </div>
-
-            <div className="flex-hori">
-              <div className="flex-veri">
-                <GatsbyImage className="image-profile" image={profile3Img!} alt="image1"/>
-                <span className="profile-name">チーズ大好きさん</span>
-              </div>
-            <figure className="quote">
-              <blockquote>
-                <span>“</span>
-                「クアトロフォルマッジ」は3種類の <br/>
-                チーズをふんだんに使用しているのでチーズ好きにはオススメです！！<br/>
-                他にも「フンギ　ポルチーニ」や「チチニエリ」も海や山の素材を楽しめてオススメです。
-                <span>“</span>
-              </blockquote>
-            </figure>
-            </div>
-          </div>
-
-          <ul className="container-flex grid-right">
-            <ImageGalleryComponent images={menuImages}/>
-          </ul>
-          <Link
-            className="button-white align-self-center grid-footer justify-self-center"
-            to="/menu"
-          >
-            More
+            <FontAwesomeIcon icon={faChevronRight} size="1x" />
+            レストランへ
           </Link>
         </div>
+
       </section>
+
+
+      <div className="big-line">
+
+      </div>
 
       {/*BBQ*/}
       <section className="flex-column container section-1">
@@ -240,7 +165,8 @@ const IndexPage = ({data}) => {
             data-sal-delay="5"
             data-sal-easing="easeOutQuint"
           >
-            More
+            <FontAwesomeIcon icon={faChevronRight}  size="1x" />
+            BBQレンタルへ
           </Link>
         </div>
       </section>
@@ -260,18 +186,6 @@ export const query = graphql`
                     transformOptions: { cropFocus: NORTHWEST, fit: COVER }
                     blurredOptions: { toFormat: PNG, width: 10 }
                     height: 700
-                )
-            }
-        }
-        imageRestaurantData: file(relativePath: { eq: "image-restaurant.png" }) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: DOMINANT_COLOR
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: { quality: 80 }
-                    transformOptions: { cropFocus: NORTHWEST, fit: COVER }
-                    blurredOptions: { toFormat: PNG, width: 10 }
                 )
             }
         }
@@ -299,48 +213,12 @@ export const query = graphql`
                 )
             }
         }
-        profile1: file(relativePath: { eq: "profiles/profile1.jpeg" }) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: DOMINANT_COLOR
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: { quality: 80 }
-                    transformOptions: { cropFocus: NORTHWEST, fit: COVER }
-                    blurredOptions: { toFormat: PNG, width: 10 }
-                )
-            }
-        }
-        profile2: file(relativePath: { eq: "profiles/profile2.jpeg" }) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: DOMINANT_COLOR
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: { quality: 80 }
-                    transformOptions: { cropFocus: NORTHWEST, fit: COVER }
-                    blurredOptions: { toFormat: PNG, width: 10 }
-                )
-            }
-        }
-        profile3: file(relativePath: { eq: "profiles/profile3.jpg" }) {
-            childImageSharp {
-                gatsbyImageData(
-                    placeholder: DOMINANT_COLOR
-                    formats: [AUTO, WEBP, AVIF]
-                    quality: 50
-                    webpOptions: { quality: 80 }
-                    transformOptions: { cropFocus: NORTHWEST, fit: COVER }
-                    blurredOptions: { toFormat: PNG, width: 10 }
-                )
-            }
-        }
         menuImagesData: allFile(filter: { relativeDirectory: { eq: "menus" } }) {
             edges {
                 node {
                     name
                     childImageSharp {
-                        gatsbyImageData(placeholder: BLURRED, quality: 80, height: 240)
+                        gatsbyImageData(placeholder: BLURRED, height: 240)
                     }
                 }
             }

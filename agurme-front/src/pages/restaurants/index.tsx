@@ -1,99 +1,83 @@
 import * as React from "react"
-import { useState } from "react"
+import {useState} from "react"
 import Layout from "../../components/layout"
+import { navigate } from "gatsby"
 
-import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {graphql, Link} from "gatsby"
+import {getImage} from "gatsby-plugin-image"
 import ModalComponent from "../../components/ModalComponent/ModalComponent"
-import { ClickableImageComponent } from "../../components/ClickableImageComponent/ClickableImageComponent"
-import { PageHeaderComponent } from "../../components/PageHeaderComponent/PageHeaderComponent"
+import {ClickableImageComponent} from "../../components/ClickableImageComponent/ClickableImageComponent"
+import {PageHeaderComponent} from "../../components/PageHeaderComponent/PageHeaderComponent"
 
-const Index = ({ data }) => {
+const Index = ({data, location}) => {
   const {
     umimaeImgData,
     ekimaeImgData,
-    pizzaGuyImgData,
-    barmanImgData,
-    dialoImgData,
   } = data
   const umimaeImage = getImage(umimaeImgData)
   const ekimaeImg = getImage(ekimaeImgData)
-  const pizzaGuyImg = getImage(pizzaGuyImgData)
-  const barmanImg = getImage(barmanImgData)
-  const dialoImg = getImage(dialoImgData)
 
   const [openModal, setOpenModal] = useState(false)
 
   return (
-    <Layout>
+    <Layout location={location}>
       {openModal && (
         <ModalComponent onClose={() => setOpenModal(false)}>
           <div>Hello</div>
         </ModalComponent>
       )}
 
-      <PageHeaderComponent title={`About Us`} />
+      <PageHeaderComponent title={`Restaurants`}/>
 
-      <div
-        className="container-flex "
-        style={{ gap: "4px", flexWrap: "nowrap" }}
-      >
-        <ClickableImageComponent
-          onClick={() => setOpenModal(false)}
-          image={umimaeImage!}
-          text={`本店`}
-        />
-        <ClickableImageComponent
-          onClick={() => setOpenModal(false)}
-          image={ekimaeImg!}
-          text={`駅前店`}
-        />
+
+      <div className="center-paraf">
+
+        私たちは、その街に足りないものとは何か。
+        また、他が真似できない新しい業態の在り方とは何か、ということを常に考え、
+        食を通して文化を変えるために、レストラン事業を展開しています。
       </div>
 
-      <section
-        className="section-1"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <div className="section-wrapper">
-          <div className="section-body">
-            <GatsbyImage className="section-img" image={barmanImg!} alt="bg" />
-            <article className="section-article">
-              <h2 className="header-2">Our story</h2>
-              都内イタリア料理店や五つ星のホテルレストランで経験を積んだ2人が、
-              それぞれの技術を持ち寄って湘南エリア茅ケ崎に本格カジュアルイタリアンを初出店！500度の石窯で一気に焼き上げる本格ピッツァをメインに、
-              魚介は平塚の漁港や鎌倉から直仕入れ、地元野菜や鎌倉で上がったタコなど現地食材をふんだんに使用。
-              料理は本格派ですが、スタッフとお客様の距離が近いカジュアルなイタリアンです。
-            </article>
-          </div>
-
-          <GatsbyImage
-            className="img-container"
-            image={pizzaGuyImg!}
-            alt="bg"
-          />
-
-          <div className="section-body-2">
-            <GatsbyImage
-              className="section-img-left"
-              image={dialoImg!}
-              alt="bg"
-            />
-            <article className="section-article-right">
-              <h2 className="header-2 ">Our Vision</h2>
-              アグルメは、人を愛する心と、家庭的な雰囲気の中で素晴らしい料理と飲み物、そして最高のサービスを楽しむことができるレストランを作りたいというビジョンから生まれました。
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <div className="center-el">
-        <Link className="button" to="/menu">
-          メニューへ
+      <div className="center-el margin-btn">
+        <Link className="button" to="/about">
+          ビージョンへ
         </Link>
       </div>
+
+      <div className="short-line"/>
+
+      <div className="section-wrapper space-bet margin-top">
+
+        <h2
+          className="align-self-end title-right grid-header justify-self-end"
+          data-sal="slide-up"
+          data-sal-duration="300"
+          data-sal-delay="5"
+          data-sal-easing="easeOutQuint"
+          style={{right: "0"}}
+        >
+          <div className="sub-title">ブランド</div>
+          <div className="primary-title">Our Brand</div>
+        </h2>
+
+
+        <div
+          className="container-flex "
+          style={{gap: "4px", flexWrap: "nowrap", marginTop: "32px"}}
+        >
+          <ClickableImageComponent
+            onClick={() => navigate('/restaurants/chigasaki-kitchen')}
+            image={ekimaeImg!}
+            text={`駅前店`}
+          />
+          <ClickableImageComponent
+            onClick={() => navigate('/restaurants/pizza-osteria')}
+            image={umimaeImage!}
+            text={`本店`}
+          />
+        </div>
+      </div>
+
+
     </Layout>
   )
 }
@@ -113,42 +97,6 @@ export const query = graphql`
       }
     }
     ekimaeImgData: file(relativePath: { eq: "restaurants/ekimae.jpeg" }) {
-      childImageSharp {
-        gatsbyImageData(
-          placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
-          quality: 50
-          webpOptions: { quality: 80 }
-          transformOptions: {}
-          blurredOptions: { toFormat: PNG, width: 10 }
-        )
-      }
-    }
-    pizzaGuyImgData: file(relativePath: { eq: "restaurants/pizza-guy.jpeg" }) {
-      childImageSharp {
-        gatsbyImageData(
-          placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
-          quality: 50
-          webpOptions: { quality: 80 }
-          transformOptions: {}
-          blurredOptions: { toFormat: PNG, width: 10 }
-        )
-      }
-    }
-    barmanImgData: file(relativePath: { eq: "restaurants/barman.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(
-          placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
-          quality: 50
-          webpOptions: { quality: 80 }
-          transformOptions: {}
-          blurredOptions: { toFormat: PNG, width: 10 }
-        )
-      }
-    }
-    dialoImgData: file(relativePath: { eq: "restaurants/dialo.jpg" }) {
       childImageSharp {
         gatsbyImageData(
           placeholder: BLURRED

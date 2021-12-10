@@ -48,12 +48,6 @@ export default function MenuNavigationComponent(
       >
         Insalate
       </li>
-      <li
-        className={`${style.link} ${activeLink !== 6 || style.activeLink}`}
-        onClick={() => handleNavigation(6)}
-      >
-        Dolce
-      </li>
     </ul>
   )
 }

@@ -1,0 +1,47 @@
+@import "./src/styles/global"
+.container
+  max-width: 740px
+  margin: auto
+
+.bg-image
+  width: 100vw
+  height: 170px
+  position: relative
+  object-fit: contain
+  overflow: hidden
+  > div
+    width: 100vw
+    animation: zoom-in 3s ease-in-out
+
+.paragraph
+  margin: 16px
+  font-size:  $s-font-size
+  font-weight: 700
+
+.menu-nav
+  background-color: #fff
+
+
+.menu-category
+  color: $primary-color
+  font-size: calc( 100vw * 24 / 414 )
+  text-align: center
+  font-weight: 700
+  position: relative
+  margin-bottom: 32px
+  &:after
+    content: ""
+    width: 2px
+    height: 32px
+    position: absolute
+    background-color: $primary-color
+    bottom: -32px
+    left: 50%
+
+
+@keyframes zoom-in
+  from
+    transform: scale(1.3)
+
+  to
+    transform: scale(1)

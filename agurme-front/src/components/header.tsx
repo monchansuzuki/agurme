@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import {GatsbyImage, getImage, StaticImage} from "gatsby-plugin-image"
 
-const Header = () => {
+const Header = ({ location}) => {
   const {tabelog, hotpepper} = useStaticQuery(graphql`
     query Header{
       tabelog: file(relativePath: { eq: "tabelog.png" }) {
@@ -59,14 +59,24 @@ const Header = () => {
 
       <aside className={`sidebar ${isActive ? "active" : ""}`}>
         <div className="menu-items">
-          <Link to="/menu" activeStyle={{ color: "orange" }}>
+          {location.pathname.includes('pizza-osteria') && (<Link to="/menu/pizza-osteria" activeStyle={{color: "orange"}}>
             メニュー
-          </Link>
+          </Link>)
+          }
+
+          {location.pathname.includes('chigasaki-kitchen') && (<Link to="/menu/chigasaki-kitchen" activeStyle={{color: "orange"}}>
+            メニュー
+          </Link>)
+          }
           <Link to="/restaurants" activeStyle={{ color: "orange" }}>
             レストラン
           </Link>
           <Link to="/bbq" activeStyle={{ color: "orange" }}>
             BBQ
+          </Link>
+
+          <Link to="/about" activeStyle={{ color: "orange" }}>
+            ビージョン
           </Link>
         </div>
 

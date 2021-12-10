@@ -28,18 +28,12 @@ export default function ImageGalleryComponent(props: ImageGalleyProps) {
       } else {
         setIndex(index + 1)
       }
-      console.log(index)
     }, 3000)
 
     return () => clearInterval(interval)
   }, [index])
 
   return (
-    <div
-      className={style.slider}
-      onMouseEnter={() => setPause(true)}
-      onMouseLeave={() => setPause(false)}
-    >
       <div className={style.sliderWrapper}>
         {props.images.map((image, i) => {
           return (
@@ -48,11 +42,10 @@ export default function ImageGalleryComponent(props: ImageGalleyProps) {
               className={style.slide}
               style={{ opacity: index == i + 1 ? 1 : 0 }}
             >
-              <GatsbyImage image={image.data} alt={image.alt} />
+              <GatsbyImage image={image.data} alt={image.alt} style={{maxHeight: '100%'}}/>
             </div>
           )
         })}
       </div>
-    </div>
   )
 }

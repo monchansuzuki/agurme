@@ -13,7 +13,7 @@ export type dishType = {
   dishIngredient?: string
 }
 
-const Index = ({data}) => {
+const Index = ({data, location}) => {
   const {bgImageData} = data
   const dataMenu = [
     {
@@ -250,7 +250,7 @@ const Index = ({data}) => {
 
   const [menu, setMenu] = useState<any>(dataMenu.filter(menu => menu.id === 1))
   return (
-    <Layout>
+    <Layout location={location}>
       <PageHeaderComponent title={`Menu`}/>
 
       <div className={style.bgImage}>
