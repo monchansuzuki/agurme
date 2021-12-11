@@ -291,22 +291,5 @@ const Index = ({data, location}) => {
     </Layout>
   )
 }
-export const query = graphql`
-  query {
-    bgImageData: file(relativePath: { eq: "bg-images/all-menu.jpeg" }) {
-      childImageSharp {
-        gatsbyImageData(
-          placeholder: DOMINANT_COLOR
-          formats: [AUTO, WEBP, AVIF]
-          quality: 50
-          webpOptions: { quality: 80 }
-          transformOptions: { cropFocus: NORTHWEST, fit: COVER }
-          blurredOptions: { toFormat: PNG, width: 10 }
-          height: 400
-        )
-      }
-    }
-  }
-`
 
 export default Index
