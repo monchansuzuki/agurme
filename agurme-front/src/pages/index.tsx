@@ -1,5 +1,4 @@
 import * as React from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faChevronRight
 } from '@fortawesome/free-solid-svg-icons'
@@ -111,7 +110,6 @@ const IndexPage = ({data, location}) => {
             data-sal-delay="5"
             data-sal-easing="easeOutQuint"
           >
-            <FontAwesomeIcon icon={faChevronRight} size="1x" />
             レストランへ
           </Link>
         </div>
@@ -165,7 +163,6 @@ const IndexPage = ({data, location}) => {
             data-sal-delay="5"
             data-sal-easing="easeOutQuint"
           >
-            <FontAwesomeIcon icon={faChevronRight}  size="1x" />
             BBQレンタルへ
           </Link>
         </div>

@@ -1,8 +1,6 @@
 import React from "react"
 import * as style from "./restaurant-main-component.module.sass"
 import {Link} from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export type MyComponentProps = {
   brandName: string
@@ -39,7 +37,6 @@ export default function RestaurantMainComponent(props: MyComponentProps) {
           style={{marginTop: '16px'}}
           to={props.link}
         >
-          <FontAwesomeIcon icon={faChevronRight} size="1x" />
           メニューへ
         </Link>
       </section>
