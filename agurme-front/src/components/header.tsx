@@ -59,12 +59,12 @@ const Header = ({ location}) => {
 
       <aside className={`sidebar ${isActive ? "active" : ""}`}>
         <div className="menu-items">
-          {location.pathname.includes('pizza-osteria') && (<Link to="/menu/pizza-osteria" activeStyle={{color: "orange"}}>
+          {location && location.pathname.includes('pizza-osteria') && (<Link to="/menu/pizza-osteria" activeStyle={{color: "orange"}}>
             メニュー
           </Link>)
           }
 
-          {location.pathname.includes('chigasaki-kitchen') && (<Link to="/menu/chigasaki-kitchen" activeStyle={{color: "orange"}}>
+          {location && location.pathname.includes('chigasaki-kitchen') && (<Link to="/menu/chigasaki-kitchen" activeStyle={{color: "orange"}}>
             メニュー
           </Link>)
           }

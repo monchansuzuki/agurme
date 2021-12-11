@@ -7,7 +7,7 @@ export type MyComponentProps = {}
 export default function AccessComponent({location}) {
   return (
     <div className={style.container}>
-      {!location.pathname.includes('pizza-osteria') &&(<div className={style.category}>
+      {location && !location.pathname.includes('pizza-osteria') &&(<div className={style.category}>
         <strong> ChigasaKitchen アグルメ</strong>
         <p>
           住所 <br/>
@@ -78,7 +78,7 @@ export default function AccessComponent({location}) {
         </div>
 
       </div>)}
-      { !location.pathname.includes('chigasaki-kitchen') && (
+      { location && !location.pathname.includes('chigasaki-kitchen') && (
         <div className={style.category}>
           <strong> Pizzeria&Osteria AGRUME </strong>
           <p>
