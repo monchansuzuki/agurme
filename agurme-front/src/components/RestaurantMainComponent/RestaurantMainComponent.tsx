@@ -8,6 +8,7 @@ export type MyComponentProps = {
   restaurantDescription: JSX.Element
   bg: JSX.Element
   inside: JSX.Element
+  imgA: JSX.Element
   link: string
 }
 
@@ -17,7 +18,7 @@ export default function RestaurantMainComponent(props: MyComponentProps) {
       <section className={style.firstContainer}>
         {props.bg}
         <div className={style.msg}>
-          {props.brandName}
+          {props.imgA}
         </div>
       </section>
 

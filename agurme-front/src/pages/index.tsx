@@ -162,6 +162,7 @@ const IndexPage = ({data, location}) => {
             data-sal-duration="300"
             data-sal-delay="5"
             data-sal-easing="easeOutQuint"
+            style={{ marginTop: '16px'}}
           >
             BBQレンタルへ
           </Link>

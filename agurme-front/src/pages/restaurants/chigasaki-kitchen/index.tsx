@@ -25,14 +25,16 @@ function Index({location, data}) {
     <Layout location={location}>
 
       <RestaurantMainComponent
-        brandName={'Chigasaki Kitchen　AGRUME'}
-        brandNameKana={`茅ヶ崎キッチン・アグルメ`}
+        imgA={<StaticImage src="../../../images/chigaskichen.png" alt="bg image"/>}
+        brandName={'ChigasaKitchen　AGRUME'}
+        brandNameKana={`チガサキッチン・アグルメ`}
         bg={<StaticImage className={style.bgImage} src="../../../images/kitchen/bg.jpeg" alt="bg image"/>}
         inside={<ImageGalleryComponent images={insideImages}/>}
-        restaurantDescription={<p>都内イタリア料理店やファイブスターホテルレストランで経験を積みそれぞれの技術を持ち合って湘南エリア茅ケ崎に本格カジュアルイタリアンを初出店！
-          500度の石窯で一気に焼き上げる本格ピッツァをメインに魚介は平塚の漁港や鎌倉から直仕入れ、地元野菜や鎌倉で上がったタコなど現地食材をふんだんに使用。
-          ご家族連れやご宴会、パーティーなどもお気軽にご利用ください。
-          お車でお越しのお客様は駐車場ございます。</p>}
+        restaurantDescription={<p>駅徒歩１分！＼＼ディナータイムは人気のマルゲリータ1枚サービスクーポンも有／／
+          一中通りのPizzeria&Osteria AGRUMEの姉妹店♪
+          500度の石窯で一気に焼き上げる本格ナポリピッツァが自慢！メインに魚介は平塚の漁港や鎌倉から直仕入れ、地元野菜や鎌倉で上がったタコなど現地食材をふんだんに使用。
+          テラス席はペットもOK！ワンちゃんとお食事が楽しめます！
+        </p>}
         link={`/restaurants/chigasaki-kitchen/menu`}
       />
 

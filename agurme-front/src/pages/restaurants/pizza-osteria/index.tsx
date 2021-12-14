@@ -25,6 +25,7 @@ function Index({location, data}) {
     <Layout location={location}>
 
       <RestaurantMainComponent
+        imgA={<StaticImage src="../../../images/agurume.png" alt="bg image"/>}
         brandName={'Pizzeria&Osteria AGRUME'}
         brandNameKana={`ピッゼリ&アオステリア・アグルメ`}
         bg={<StaticImage className={style.bgImage} src="../../../images/umi/bg.jpg" alt="bg image"/>}
