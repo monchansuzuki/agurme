@@ -67,9 +67,7 @@ export default function AccessComponent({location}) {
           <strong>営業時間</strong>
           <p>ランチ営業 11:00~15:00
             <br/>
-            ハッピーアワー 17:00~19:00
-            <br/>
-            ディナー営業 17:00~22:00
+            ディナー営業 17:00~24:00
             <br/>
             ラストオーダー 23:00
           </p>
@@ -138,12 +136,12 @@ export default function AccessComponent({location}) {
           <div className={style.category}>
             <strong>営業時間</strong>
             <p>ランチ営業 11:00~15:00
+
               <br/>
-              ハッピーアワー 17:00~19:00
+              ディナー営業 17:00~22:00
               <br/>
-              ディナー営業 17:00~24:00
-              <br/>
-              ラストオーダー 23:00
+              ラストオーダー 21:00
+
             </p>
             <strong>定休日 </strong>
             <p> 毎週月曜（祝日の場合、翌平日）</p>
